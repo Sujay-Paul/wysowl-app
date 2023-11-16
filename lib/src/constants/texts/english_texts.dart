@@ -1,0 +1,58 @@
+
+final Map<String, String> englishTexts = {
+
+  'Welcome1' : 'Login or Sign Up',
+  'Welcome2' : 'Login or create an account to learn about child rights, contact legal experts, and more.',
+  'Welcome3' : 'Login',
+  'Welcome4' : 'Create an account',
+  'Welcome5' : 'Later',
+
+  'Login1' : 'Login',
+  'Login2' : 'Login with Google',
+  'Login3' : 'OR',
+  'Login4' : 'Mobile Number',
+  'Login5' : 'Your mobile number',
+  'Login6' : 'Mobile number must be filled.',
+  'Login7' : 'Enter a valid 10 digit mobile number',
+  'Login8' : 'Password',
+  'Login9' : 'Your password',
+  'Login10': 'Password must be filled.',
+  'Login11': 'Password must be of 8 or more characters',
+  'Login12': 'Password must contain atleast an alphabet',
+  'Login13': 'Password must contain atleast a number',
+  'Login14': 'Forgot password?',
+
+  'MobileVer1' : 'Number Verification',
+  'MobileVer2' : 'Enter your number and we will send you an OTP to reset your password.',
+  'MobileVer3' : 'Send an OTP',
+  'MobileVer4' : 'We will send you an OTP to verify your mobile number.',
+
+  'SignUp1' : 'Sign Up',
+  'SignUp2' : 'Name',
+  'SignUp3' : 'Your full name',
+  'SignUp4' : 'Age',
+  'SignUp5' : 'Your current age',
+  'SignUp6' : 'State',
+  'SignUp7' : 'Choose your living state',
+  'SingUp8' : 'Domicile',
+  'SingUp9' : 'State or Union Terriotry',
+  'SingUp10': 'Continue',
+  'SignUp11': 'Enter your full name',
+  'SignUp12': 'Please enter your real name',
+  'SignUp13': 'Enter your age',
+  'SignUp14': 'Enter a valid age',
+  'SignUp15': 'You are underage for this app',
+  'SignUp16': 'Please select your domicile!',
+
+  'NewPass1' : 'Reset Password',
+  'NewPass2' : 'Your new password must be different from previous used passwords.',
+  'NewPass3' : 'New Password',
+  'NewPass4' : 'Enter your new password',
+  'NewPass5' : 'Confirm Password',
+  'NewPass6' : 'Re enter your new password',
+  'NewPass7' : 'Create Account',
+  'NewPass8' : 'Password did not match!',
+  'NewPass9' : 'Set Password',
+  'NewPass10': 'Create a new password for your account'
+
+};
