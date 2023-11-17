@@ -22,16 +22,15 @@ class SignUpScreen extends ConsumerStatefulWidget {
 
 class _SignUpScreenState extends ConsumerState<SignUpScreen> {
   final _formkey = GlobalKey<FormState>();
+  String enteredName = '';
+  String enteredAge = '';
+  String? selectedRegion;
 
   @override
   Widget build(BuildContext context) {
     final textData = ref.watch(languageProvider);
     final height = ref.watch(mediaHeightProvider);
     final width = ref.watch(mediaWidthProvider);
-
-    String enteredName = '';
-    String enteredAge = '';
-    String? selectedRegion;
 
     void onSignUp() {
       if (_formkey.currentState!.validate()) {
@@ -53,7 +52,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
           final snackBar = SnackBar(
             content: Text(
               textData['SignUp16']!,
-              style: rubikb2,
+              style: rubikb1,
             ),
             duration: const Duration(seconds: 2),
           );

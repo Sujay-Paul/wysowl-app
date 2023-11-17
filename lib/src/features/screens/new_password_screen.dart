@@ -32,12 +32,7 @@ class _NewPasswordScreenState extends ConsumerState<NewPasswordScreen> {
   final _formkey = GlobalKey<FormState>();
   String enteredNewPassword = '';
   String enteredConfirmPassword = '';
-
-  @override
-  void initState() {
-    
-    super.initState();
-  }
+  bool checkboxValue = false;
 
   @override
   Widget build(BuildContext context) {
@@ -53,17 +48,16 @@ class _NewPasswordScreenState extends ConsumerState<NewPasswordScreen> {
 
         if (enteredNewPassword == enteredConfirmPassword) {
           final int mobileNumber = int.parse(widget.number);
-          if(widget.age=='null'){
+          if (widget.age == 'null') {
             // TODO: Reset the password of mobileNumber by enteredNewPassword var in database
-          }
-          else{
+          } else {
             final String userName = widget.name;
             final int userAge = int.parse(widget.age);
             final String userRegion = widget.region;
             // TODO: Create new account with mobileNumber, userName, userAge, userRegion and enteredNewPassword in database
           }
 
-          popUntil(context,RouteNames.login);
+          popUntil(context, RouteNames.login);
         } else {
           final snackBar = SnackBar(
             content: Text(
@@ -111,28 +105,54 @@ class _NewPasswordScreenState extends ConsumerState<NewPasswordScreen> {
           children: [
             Column(
               children: [
-                Text(
-                  widget.age == 'null' ? textData['NewPass2']! : textData['NewPass10']!,
-                  style: rubikp1,
+                Column(
+                  children: [
+                    Text(
+                      widget.age == 'null'
+                          ? textData['NewPass2']!
+                          : textData['NewPass10']!,
+                      style: rubikp1,
+                    ),
+                    SizedBox(height: height * 0.03),
+                    Form(
+                      key: _formkey,
+                      child: Column(
+                        children: [
+                          CustomTextField(
+                            veritcalPadding: height * 0.03,
+                            fieldHeading: textData['NewPass3']!,
+                            saveData: onSave,
+                          ),
+                          CustomTextField(
+                            veritcalPadding: height * 0.03,
+                            fieldHeading: textData['NewPass5']!,
+                            saveData: onSave,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-                SizedBox(height: height * 0.03),
-                Form(
-                  key: _formkey,
-                  child: Column(
+                if (widget.age != 'null' && int.parse(widget.age) > 20)
+                  Row(
                     children: [
-                      CustomTextField(
-                        veritcalPadding: height * 0.03,
-                        fieldHeading: textData['NewPass3']!,
-                        saveData: onSave,
+                      Checkbox(
+                        fillColor: MaterialStateProperty.resolveWith((states) {
+                          if (!states.contains(MaterialState.selected)) {
+                            return Colors.white;
+                          }
+                          return null;
+                        }),
+                        value: checkboxValue,
+                        onChanged: (newValue) {
+                          setState(() {
+                            checkboxValue = newValue!;
+                          });
+                        },
                       ),
-                      CustomTextField(
-                        veritcalPadding: height * 0.03,
-                        fieldHeading: textData['NewPass5']!,
-                        saveData: onSave,
-                      ),
+                      Text(textData['NewPass11']!,style: rubikb5,),
                     ],
                   ),
-                ),
               ],
             ),
             ElevatedButton(
@@ -142,7 +162,7 @@ class _NewPasswordScreenState extends ConsumerState<NewPasswordScreen> {
                 textData['NewPass7']!,
                 style: rubikb1,
               ),
-            )
+            ),
           ],
         ),
       ),

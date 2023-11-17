@@ -53,6 +53,7 @@ final Map<String, String> englishTexts = {
   'NewPass7' : 'Create Account',
   'NewPass8' : 'Password did not match!',
   'NewPass9' : 'Set Password',
-  'NewPass10': 'Create a new password for your account'
+  'NewPass10': 'Create a new password for your account',
+  'NewPass11': 'Sign up as a parent',
 
 };
