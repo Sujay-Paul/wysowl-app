@@ -54,7 +54,8 @@ class _NewPasswordScreenState extends ConsumerState<NewPasswordScreen> {
             final String userName = widget.name;
             final int userAge = int.parse(widget.age);
             final String userRegion = widget.region;
-            // TODO: Create new account with mobileNumber, userName, userAge, userRegion and enteredNewPassword in database
+            // TODO: Create new account with mobileNumber, userName, userAge, userRegion and enteredNewPassword in database 
+            // TODO: If checkboxValue is true then parent account else children account
           }
 
           popUntil(context, RouteNames.login);
@@ -150,7 +151,10 @@ class _NewPasswordScreenState extends ConsumerState<NewPasswordScreen> {
                           });
                         },
                       ),
-                      Text(textData['NewPass11']!,style: rubikb5,),
+                      Text(
+                        textData['NewPass11']!,
+                        style: rubikb5,
+                      ),
                     ],
                   ),
               ],
