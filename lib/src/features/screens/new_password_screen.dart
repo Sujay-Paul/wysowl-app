@@ -134,7 +134,7 @@ class _NewPasswordScreenState extends ConsumerState<NewPasswordScreen> {
                     ),
                   ],
                 ),
-                if (widget.age != 'null' && int.parse(widget.age) > 20)
+                if (widget.age != 'null' && int.parse(widget.age) > 16)
                   Row(
                     children: [
                       Checkbox(

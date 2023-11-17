@@ -12,6 +12,11 @@ import 'package:wysowl/src/themes/button_theme.dart';
 class LoginBox extends ConsumerWidget {
   const LoginBox({super.key});
 
+  void onLater(BuildContext context){
+    // TODO: Anonymous login here
+    context.goNamed(RouteNames.home);
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final height = ref.watch(mediaHeightProvider);
@@ -78,7 +83,7 @@ class LoginBox extends ConsumerWidget {
             ],
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {return onLater(context);},
             child: Text(
               textData['Welcome5']!,
               style: rubikb3,
